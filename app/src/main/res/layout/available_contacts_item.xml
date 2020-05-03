@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+
+        <android.support.v7.widget.CardView
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:id="@+id/ACimageView"
+            app:cardElevation="0dp"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="23dp"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            android:thicknessRatio="1">
+            <ImageView
+                android:layout_height="46dp"
+                android:id="@+id/ACAvatar"
+                android:layout_width="match_parent"
+                android:src="@drawable/jokerface"
+                android:layout_alignParentTop="false"
+                android:layout_centerHorizontal="false">
+            </ImageView>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:id="@+id/ACchatlist_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@android:color/black"
+            android:text="TextView"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@+id/ACimageView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ACchatlist_message"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:paddingBottom="5dp"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="@id/ACchatlist_name"
+            app:layout_constraintTop_toBottomOf="@+id/ACchatlist_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:alpha=".6"/>
+
+        <TextView
+            android:id="@+id/ACchatlist_time"
+            android:visibility="gone"
+            android:layout_width="69dp"
+            android:layout_height="22dp"
+            android:layout_marginTop="8dp"
+            android:text="TextView"
+            android:textSize="12dp"
+            android:textAlignment="textEnd"
+            app:layout_constraintBottom_toBottomOf="@+id/ACchatlist_name"
+            app:layout_constraintEnd_toEndOf="@+id/ACchatlist_message"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="end" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    android:outlineProvider="none"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:background="@drawable/incoming_speech_buuble"
+        android:backgroundTint="?attr/cardPrimaryColor"
+        android:textSize="15sp"
+        android:text="TextView"
+        android:textColor="?attr/textPrimaryColor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:elevation="5dp"
+        android:outlineProvider="none"
+        android:id="@+id/chat_message_list_text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textAlignment="textStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:alpha="1"
+        android:paddingStart="20dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"/>
+
+</android.support.constraint.ConstraintLayout>

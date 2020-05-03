@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="0dp"
+    android:id="@+id/home_constraint"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    tools:context=".activities.mainwindow.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:elevation="8px"
+        android:id="@+id/tinymenu_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:alpha="1"
+        android:visibility="visible"
+        android:background="@color/white"/>
+<!-- #C9CCC2 -->
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/quickbar"
+        android:layout_width="10dp"
+        android:elevation="3px"
+        android:alpha=".9"
+        android:outlineProvider="none"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="0dp">
+        <FrameLayout
+            android:layout_width="2dp"
+            android:alpha="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            android:layout_height="40dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/top_scrollbar"
+            android:background="@drawable/scrollbar_top"/>
+
+        <FrameLayout
+            android:id="@+id/quickbar_line"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:visibility="invisible"
+            android:background="@drawable/quickbar_line"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/statusspace"
+        android:elevation="30px"
+        android:alpha="0"
+        android:outlineProvider="none"
+        android:background="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tinymenu"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/home_view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:outlineProvider="none"
+        android:elevation="2px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@android:color/transparent"/>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/addContact"
+        app:layout_constraintBottom_toTopOf="@id/chatWithFAB"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:fabSize="mini"
+        android:backgroundTint="@color/white"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_keyboard_arrow_up_black_24dp"
+        android:layout_margin="5dp"
+        android:visibility="visible"
+        />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/chatWithFAB"
+        app:layout_constraintBottom_toTopOf="@id/bottom_tab"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="@color/themePrimaryLight"
+        app:borderWidth="0dp"
+        android:visibility="invisible"
+        app:layout_constraintWidth_max="20dp"
+        app:elevation="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_message"
+        android:layout_margin="10dp" />
+
+
+
+    <android.support.design.widget.TabLayout
+        android:layout_marginTop="90dp"
+        android:id="@+id/hometabs"
+        app:tabBackground="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/quickbar"
+        android:background="@android:color/transparent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:elevation="33px"
+        app:tabTextColor="@color/darkgrey"
+        app:tabIndicatorColor="@android:color/white"
+        app:tabSelectedTextColor="@android:color/black"
+        app:tabMode="fixed"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:background="@color/white"
+        android:foreground="@drawable/shadow_top"
+        android:elevation="10px"
+        android:outlineProvider="none"
+        android:alpha="0"
+        app:layout_constraintLeft_toLeftOf="@id/tinymenu"
+        app:layout_constraintRight_toRightOf="@id/tinymenu"
+        app:layout_constraintBottom_toBottomOf="@id/tinymenu">
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/tinymenu_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_more_vert_black_24dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="@id/tinymenu"
+        app:layout_constraintRight_toRightOf="@id/tinymenu"
+        app:layout_constraintBottom_toBottomOf="@id/tinymenu"
+        android:layout_marginBottom="0dp"
+        android:rotation="90"
+        android:padding="0dp"
+        android:alpha=".2"
+        app:layout_goneMarginBottom="1dp"
+        android:layout_marginRight="5dp"
+        android:outlineProvider="none"
+        android:elevation="36px"
+        />
+    <ImageView
+        android:id="@+id/cameraicon"
+        android:outlineProvider="none"
+        android:elevation="36px"
+        app:layout_constraintTop_toTopOf="@id/tinymenu"
+        app:layout_constraintLeft_toLeftOf="@id/tinymenu"
+        app:layout_constraintBottom_toBottomOf="@id/tinymenu"
+        android:background="@drawable/rounded_white_basic"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/ic_camera_alt_black_24dp"
+        android:padding="6dp"
+        android:layout_marginTop="20dp"
+        android:visibility="visible"
+        android:layout_marginLeft="2dp"
+        android:alpha="0"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/tinymenu"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:paddingTop="2dp"
+        app:layout_constraintBottom_toBottomOf="@id/tinymenu_bg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@android:color/transparent"
+        android:outlineProvider="none"
+        android:elevation="34px"
+        >
+
+
+        <FrameLayout
+            android:id="@+id/menuslide0"
+            android:layout_width="20dp"
+            android:layout_height="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/menuslide1"
+            android:background="@drawable/rounded_active_underlines"
+            android:backgroundTint="#000000"
+            android:alpha=".2"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="19px"
+            android:visibility="visible"/>
+
+        <FrameLayout
+            android:id="@+id/menuslide1"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/menuslide0"
+            app:layout_constraintRight_toLeftOf="@id/menuslide2"
+            android:background="@drawable/rounded_active_underlines"
+            android:backgroundTint="#000000"
+            android:alpha="0.7"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="19px"
+            android:layout_marginRight="5dp"/>
+
+        <FrameLayout
+            android:id="@+id/menuslide2"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            app:layout_constraintTop_toTopOf="@id/menuslide1"
+            app:layout_constraintLeft_toRightOf="@id/menuslide1"
+            app:layout_constraintRight_toLeftOf="@id/menuslide3"
+            android:background="@drawable/rounded_active_underlines"
+            android:backgroundTint="#000000"
+            android:alpha=".2"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="0px"
+            android:layout_marginRight="5dp"/>
+
+        <FrameLayout
+            android:id="@+id/menuslide3"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            app:layout_constraintTop_toTopOf="@id/menuslide1"
+            app:layout_constraintLeft_toRightOf="@id/menuslide2"
+            app:layout_constraintRight_toLeftOf="@id/menuslide4"
+            android:background="@drawable/rounded_active_underlines"
+            android:backgroundTint="#000000"
+            android:layout_marginLeft="5dp"
+            android:alpha=".2"
+            android:layout_marginTop="0px"
+            android:layout_marginRight="5dp"/>
+        <FrameLayout
+            android:id="@+id/menuslide4"
+            android:layout_width="20dp"
+            android:layout_height="3dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/menuslide3"
+            android:background="@drawable/rounded_active_underlines"
+            android:backgroundTint="#000000"
+            android:alpha=".2"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="19px"
+            android:visibility="invisible"/>
+
+
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/bottom_tab_expander"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/dynamicEye"
+        />
+
+    <LinearLayout
+        android:id="@+id/bottom_tab"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toTopOf="@+id/bottom_tab_expander"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:background="@drawable/shadow_top"
+        android:elevation="3dp"
+        android:rotationY="180"/>
+
+    <ImageView
+        android:id="@+id/active1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_location_on_black_24dp"
+        android:elevation="3dp"
+        android:outlineProvider="none"
+        android:paddingTop="17dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_tab"
+        app:layout_constraintLeft_toLeftOf="@id/bottom_tab"
+        app:layout_constraintRight_toLeftOf="@id/active2"/>
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:layout_constraintLeft_toLeftOf="@id/active1"
+        app:layout_constraintRight_toRightOf="@id/active1"
+        app:layout_constraintTop_toTopOf="@id/active1"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_active_underlines"
+        android:elevation="3dp"
+        android:outlineProvider="none"
+        android:backgroundTint="@color/babyblue"/>
+
+    <ImageView
+        android:id="@+id/active2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_person_black_24dp"
+        android:elevation="3dp"
+        android:outlineProvider="none"
+        android:paddingTop="17dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_tab"
+        app:layout_constraintLeft_toRightOf="@id/active1"
+        app:layout_constraintRight_toLeftOf="@id/active3"/>
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:layout_constraintLeft_toLeftOf="@id/active2"
+        app:layout_constraintRight_toRightOf="@id/active2"
+        app:layout_constraintTop_toTopOf="@id/active2"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_active_underlines"
+        android:elevation="3dp"
+        android:outlineProvider="none"
+        android:backgroundTint="@color/babyblue"/>
+
+
+    <ImageView
+        android:id="@+id/active3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_tv_black_24dp"
+        android:elevation="3dp"
+        android:outlineProvider="none"
+        android:paddingTop="17dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="13dp"
+        android:paddingRight="13dp"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_tab"
+        app:layout_constraintLeft_toRightOf="@id/active2"
+        app:layout_constraintRight_toLeftOf="@id/active4"/>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:layout_constraintLeft_toLeftOf="@id/active3"
+        app:layout_constraintRight_toRightOf="@id/active3"
+        app:layout_constraintTop_toTopOf="@id/active3"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_active_underlines"
+        android:elevation="3dp"
+        android:outlineProvider="none"
+        android:backgroundTint="@color/babyblue"/>
+
+    <ImageView
+        android:id="@+id/active4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_notifications_black_24dp"
+        android:elevation="3dp"
+        android:outlineProvider="none"
+        android:padding="15dp"
+        android:alpha=".3"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_tab"
+        app:layout_constraintLeft_toRightOf="@id/active3"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
